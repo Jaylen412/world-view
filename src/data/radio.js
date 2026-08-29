@@ -30,8 +30,8 @@ import {
   GLOBE_ENTER_CLEARANCE_PX,
   isFullGlobeInsideKeyhole,
   projectEarthDiscToViewport,
-} from '../celestialRing.js';
-import { governorRequestRender } from '../renderGovernor.js';
+} from '../effects/celestialRing.js';
+import { governorRequestRender } from '../effects/renderGovernor.js';
 
 const RADIO_PREFIX = 'radio:';
 const DIRECTORY_ENDPOINT = '/api/radio/stations';

@@ -4,13 +4,13 @@ import {
   getSatelliteOrbitTrack,
   orbitFrameModelMatrix,
 } from './satellites.js';
-import { getKeyholeGeometry } from '../celestialRing.js';
+import { getKeyholeGeometry } from '../effects/celestialRing.js';
 import {
   clearOverlaySource,
   setOverlayEntries,
   setOverlaySourceVisible,
 } from '../overlays/worldOverlay.js';
-import { holdContinuousRender, releaseContinuousRender } from '../renderGovernor.js';
+import { holdContinuousRender, releaseContinuousRender } from '../effects/renderGovernor.js';
 
 const WINDOW_DAYS = 30;
 const API_URL = '/api/launches';

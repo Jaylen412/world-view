@@ -1,5 +1,5 @@
 import * as Cesium from 'cesium';
-import { governorRequestRender } from '../renderGovernor.js';
+import { governorRequestRender } from '../effects/renderGovernor.js';
 import {
   registerSpriteCollection,
   restoreSpriteOrder,
@@ -33,7 +33,7 @@ import {
   setOverlayEntries,
   setOverlaySourceVisible,
 } from '../overlays/worldOverlay.js';
-import { requestWorldFocus } from '../worldFocus.js';
+import { requestWorldFocus } from '../camera/worldFocus.js';
 
 /** Same-origin live-fires proxy (vite.config.js firmsProxy — key stays server-side). */
 const FIRMS_API_URL = '/api/firms';

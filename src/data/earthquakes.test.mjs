@@ -18,7 +18,7 @@ import {
   getRenderGovernorDiagnostics,
   installRenderGovernor,
   _resetRenderGovernorForTest,
-} from '../renderGovernor.js';
+} from '../effects/renderGovernor.js';
 
 const FULL_RAW = {
   id: 'us7000abcd',

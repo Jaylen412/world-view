@@ -1,5 +1,5 @@
 import * as Cesium from 'cesium';
-import { holdContinuousRender, releaseContinuousRender } from './renderGovernor.js';
+import { holdContinuousRender, releaseContinuousRender } from '../effects/renderGovernor.js';
 
 /**
  * OrbitController — smooth orbit around a target point.

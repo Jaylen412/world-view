@@ -19,7 +19,7 @@ import {
   BLOOM_INTENSITY_DEFAULT,
   BLOOM_SCALE_VERSION,
   decodeBloomIntensity,
-} from '../bloom.js';
+} from '../effects/bloom.js';
 
 /** @constant {string} Key code used to abort a running scene */
 const ESCAPE_KEY = 'Escape';

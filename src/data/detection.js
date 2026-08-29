@@ -1,5 +1,5 @@
 import * as Cesium from 'cesium';
-import { governorRequestRender } from '../renderGovernor.js';
+import { governorRequestRender } from '../effects/renderGovernor.js';
 import {
   DETECTION_ENABLE_FADE_MS,
   countAnimatingRenderEntries,
@@ -18,7 +18,7 @@ import {
 import {
   getKeyholeFadeTuning,
   keyholeLabelAlphaFromGeometry,
-} from '../celestialRing.js';
+} from '../effects/celestialRing.js';
 import { registerWorldOverlayPaintLane } from '../overlays/worldOverlay.js';
 import {
   DETECTION_STYLE,

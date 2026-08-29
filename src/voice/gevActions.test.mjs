@@ -4,8 +4,8 @@ import * as Cesium from 'cesium';
 import { CCTV_FOCUS_RESULT } from '../data/cctv.js';
 import { getContextStore, registerEntityContext } from '../data/contextStore.js';
 import { DataLayerManager } from '../data/manager.js';
-import { getActiveCameraMotion, interruptCameraMotion, moveCamera } from '../cameraVerbs.js';
-import { reassertNavigationHandoff, runExplicitNavigation } from '../navigationPolicy.js';
+import { getActiveCameraMotion, interruptCameraMotion, moveCamera } from '../camera/cameraVerbs.js';
+import { reassertNavigationHandoff, runExplicitNavigation } from '../camera/navigationPolicy.js';
 import { TR3B_CLASS } from '../data/tr3bRegistry.js';
 import {
   controlCctv,

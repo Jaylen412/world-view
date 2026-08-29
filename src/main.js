@@ -1,6 +1,6 @@
 import * as Cesium from 'cesium';
 import { StyleManager } from './ui.js';
-import { flyToAustin } from './camera.js';
+import { flyToAustin } from './camera/camera.js';
 import { DataLayerManager } from './data/manager.js';
 import flightsLayer from './data/flights.js';
 import militaryFlightsLayer from './data/militaryFlights.js';
@@ -19,19 +19,19 @@ import { LAYER_STATE_REGISTRY } from './data/layerState.js';
 import { registerDataCredits } from './data/dataCredits.js';
 import { SceneDirector } from './scenes/director.js';
 import { initGevVoiceCommands } from './voice/gevRealtime.js';
-import { MapStackController } from './mapStackController.js';
+import { MapStackController } from './hud/mapStackController.js';
 import { initAnnotations } from './annotations/index.js';
-import { initLogoGaze } from './logoGaze.js';
-import { initCockpitCloudEffects } from './cockpitCloudEffects.js';
+import { initLogoGaze } from './hud/logoGaze.js';
+import { initCockpitCloudEffects } from './cockpit/cockpitCloudEffects.js';
 import {
   installRenderGovernor,
   getRenderGovernorDiagnostics,
   governorRequestRender,
   holdContinuousRender,
   releaseContinuousRender,
-} from './renderGovernor.js';
-import { installScopeMask } from './scopeMask.js';
-import { initFirstRunExperience } from './firstRunExperience.js';
+} from './effects/renderGovernor.js';
+import { installScopeMask } from './effects/scopeMask.js';
+import { initFirstRunExperience } from './policy/firstRunExperience.js';
 
 initLogoGaze();
 

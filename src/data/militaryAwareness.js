@@ -13,15 +13,15 @@ import {
   getAwarenessNavigationTargets,
   summarizeAwarenessCohort,
 } from './militaryAwarenessEngine.js';
-import { announceNavigationAuthority } from '../navigationPolicy.js';
-import { celestialScreenAngle, getKeyholeGeometry } from '../celestialRing.js';
-import { bearingBetweenCoordinates } from '../cockpitMath.js';
+import { announceNavigationAuthority } from '../camera/navigationPolicy.js';
+import { celestialScreenAngle, getKeyholeGeometry } from '../effects/celestialRing.js';
+import { bearingBetweenCoordinates } from '../cockpit/cockpitMath.js';
 import { cameraPoseSignature } from './iconOrientation.js';
 import {
   governorRequestRender,
   holdContinuousRender,
   releaseContinuousRender,
-} from '../renderGovernor.js';
+} from '../effects/renderGovernor.js';
 
 const AIRCRAFT_DEPENDENCIES = ['flights', 'military'];
 const DEFERRED_DEPENDENCIES = ['ais-live-vessels', 'military-installations'];

@@ -11,7 +11,7 @@
  */
 
 import * as Cesium from 'cesium';
-import { governorRequestRender } from '../renderGovernor.js';
+import { governorRequestRender } from '../effects/renderGovernor.js';
 import { registerSpriteCollection, restoreSpriteOrder } from './spriteOrder.js';
 import { registerPickOwner, unregisterPickOwner } from './pickRegistry.js';
 import {

@@ -25,10 +25,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const TESTS = 'src/firstRunExperience.test.mjs';
+const TESTS = 'src/policy/firstRunExperience.test.mjs';
 
 const FILES = {
-  module: path.join(ROOT, 'src', 'firstRunExperience.js'),
+  module: path.join(ROOT, 'src', 'policy', 'firstRunExperience.js'),
   html: path.join(ROOT, 'index.html'),
   css: path.join(ROOT, 'style.css'),
   vite: path.join(ROOT, 'vite.config.js'),

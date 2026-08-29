@@ -60,7 +60,7 @@ import {
   selectTrackedSubjectContext,
 } from './contextStore.js';
 import { CONTACT_MATCH_TIER, contactMatchWins, rankContactMatch } from './contactMatch.js';
-import { holdContinuousRender, releaseContinuousRender } from '../renderGovernor.js';
+import { holdContinuousRender, releaseContinuousRender } from '../effects/renderGovernor.js';
 
 /**
  * @module militaryFlights

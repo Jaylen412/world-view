@@ -6,7 +6,7 @@ import {
   getKeyholeGeometry,
   keyholeLabelAlphaFromGeometry,
   setKeyholeFadeTuning,
-} from '../celestialRing.js';
+} from '../effects/celestialRing.js';
 import { createCctvThumbnailOverlayEntry, createFrameSlot } from '../data/cctvCards.js';
 import { combinedOverlayAlpha } from './worldOverlayDraw.js';
 import {

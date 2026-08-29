@@ -11,28 +11,28 @@ import {
   bloomStrengthFromIntensity,
   clampBloomIntensity,
   decodeBloomIntensity,
-} from './bloom.js';
-import { LOCATIONS, CITY_POIS, GLOBE_VIEW, flyToGlobeView, flyToPresetLocation, flyToPOI, searchAndFlyTo } from './locations.js';
-import { locationMiniStatus } from './locationStatus.js';
-import { interruptCameraMotion } from './cameraVerbs.js';
+} from './effects/bloom.js';
+import { LOCATIONS, CITY_POIS, GLOBE_VIEW, flyToGlobeView, flyToPresetLocation, flyToPOI, searchAndFlyTo } from './camera/locations.js';
+import { locationMiniStatus } from './camera/locationStatus.js';
+import { interruptCameraMotion } from './camera/cameraVerbs.js';
 import {
   aircraftTrackingTarget,
   enterCockpitWithTracking,
-} from './cockpitTracking.js';
-import { IntelHUD } from './hud.js';
-import { ShareLinkManager } from './sharelink.js';
+} from './cockpit/cockpitTracking.js';
+import { IntelHUD } from './hud/hud.js';
+import { ShareLinkManager } from './camera/sharelink.js';
 import {
   isExplicitLayerStateOrigin,
   LayerStateCoordinator,
 } from './data/layerState.js';
-import { renderMapStackChips, syncMapStackChips } from './mapStackChips.js';
-import { OrbitController } from './orbit.js';
+import { renderMapStackChips, syncMapStackChips } from './hud/mapStackChips.js';
+import { OrbitController } from './camera/orbit.js';
 import {
   CelestialRing,
   getKeyholeFadeTuning,
   isCelestialRingStyleSupported,
   setKeyholeFadeTuning,
-} from './celestialRing.js';
+} from './effects/celestialRing.js';
 import { destroyTrackedReadout, initTrackedReadout } from './data/trackedReadout.js';
 import { destroyWorldOverlay, initWorldOverlay } from './overlays/worldOverlay.js';
 import {
@@ -84,8 +84,8 @@ import {
   presentLoadingFeedback,
   reduceLoadingFeedback,
   reduceTrafficSyncFeedback,
-} from './loadingFeedback.js';
-import { setSplitFlapText } from './splitFlap.js';
+} from './hud/loadingFeedback.js';
+import { setSplitFlapText } from './hud/splitFlap.js';
 import {
   cockpitEntryAllowed,
   contextAllowedLayerIds,
@@ -105,50 +105,50 @@ import {
   shouldExitContextForLayerChange,
   spaceMissionEntryCancellationDisposition,
   contextModeWord,
-} from './contextModePolicy.js';
+} from './policy/contextModePolicy.js';
 import {
   shouldExpandGlobalContextPanel,
   shouldHideCollapsedRightPanels,
-} from './rightRailPolicy.js';
+} from './hud/rightRailPolicy.js';
 import {
   allocatePanelStackHeights,
   panelStackAutoCollapseIndices,
   resolveLeftStackBottomBoundary,
   resolvePanelStackCorridor,
-} from './panelStackLayout.js';
+} from './hud/panelStackLayout.js';
 import {
   resolveCockpitUtilityAnchor,
   resolveCockpitUtilityLayout,
-} from './cockpitUtilityLayout.js';
+} from './cockpit/cockpitUtilityLayout.js';
 import {
   applyCockpitVisionStageIntensities,
   captureCockpitVisionBaseline,
   COCKPIT_VISION_MODES,
   normalizeCockpitVisionMode,
-} from './cockpitVisionPolicy.js';
+} from './cockpit/cockpitVisionPolicy.js';
 import {
   applyContactsDetection,
   shareCacheNeedsHeal,
   shareableDetectionState,
-} from './contactsDetectionPolicy.js';
+} from './policy/contactsDetectionPolicy.js';
 import { formatAwarenessLabel } from './data/militaryAwarenessEngine.js';
-import { runCctvLayerEnableTransition } from './cctvFocusPolicy.js';
+import { runCctvLayerEnableTransition } from './policy/cctvFocusPolicy.js';
 import {
   registerCctvFocusRequestListener,
   routeCctvFocusRequest,
-} from './cctvFocusRequest.js';
+} from './policy/cctvFocusRequest.js';
 import {
   flyToWorldTarget,
   registerWorldFocusRequestListener,
   routeWorldFocusRequest,
-} from './worldFocus.js';
+} from './camera/worldFocus.js';
 import {
   beginDeferredNavigation,
   reassertNavigationHandoff,
   registerNavigationAuthorityListener,
   runExplicitNavigation,
   stampInitialShareGesture,
-} from './navigationPolicy.js';
+} from './camera/navigationPolicy.js';
 import {
   cachedGroundFloor,
   cachedMeshFloor,
@@ -157,7 +157,7 @@ import {
   warmGroundFloor,
 } from './data/groundFloor.js';
 import { sampleMeshFloorCells } from './data/meshFloorSampler.js';
-import { holdContinuousRender, releaseContinuousRender, governorRequestRender } from './renderGovernor.js';
+import { holdContinuousRender, releaseContinuousRender, governorRequestRender } from './effects/renderGovernor.js';
 import {
   setScopeMaskEnabled,
   isScopeMaskEnabled,
@@ -166,7 +166,7 @@ import {
   setScopeTerminusOverride,
   getScopeTerminusOverride,
   clampScopeTerminusPct,
-} from './scopeMask.js';
+} from './effects/scopeMask.js';
 import {
   fetchRegionalBrief,
   regionalDistanceM,
@@ -193,7 +193,7 @@ import {
   resolveTrackedAircraftInfo,
   slewHeading,
   speedRulerTicks,
-} from './cockpitMath.js';
+} from './cockpit/cockpitMath.js';
 
 /** Duration (ms) for shader intensity crossfade between style presets. */
 const TRANSITION_DURATION_MS = 500;

@@ -16,7 +16,7 @@ import {
   profileForDensity,
   viewScaleForAltitude,
 } from './detectionPolicy.js';
-import { KEYHOLE_OUTSIDE_OPACITY_DEFAULT } from '../celestialRing.js';
+import { KEYHOLE_OUTSIDE_OPACITY_DEFAULT } from '../effects/celestialRing.js';
 
 const indexHtml = fs.readFileSync(new URL('../../index.html', import.meta.url), 'utf8');
 

@@ -23,10 +23,10 @@ import {
   getMode as getDetectionMode,
   setDetectionTuning,
   setMode as setDetectionModeByLabel,
-} from './data/detection.js';
-import { canonicalizeDensity } from './data/detectionPolicy.js';
+} from '../data/detection.js';
+import { canonicalizeDensity } from '../data/detectionPolicy.js';
 
-const uiSource = fs.readFileSync(new URL('./ui.js', import.meta.url), 'utf8');
+const uiSource = fs.readFileSync(new URL('../ui.js', import.meta.url), 'utf8');
 
 /**
  * The tactical preset ui.js hands Contacts. Read out of the source so this test

@@ -1,5 +1,5 @@
 import * as Cesium from 'cesium';
-import { viewportBias, placesNearViewRecovery } from './annotations/annotationResolver.js';
+import { viewportBias, placesNearViewRecovery } from '../annotations/annotationResolver.js';
 
 /**
  * Points of Interest per city.

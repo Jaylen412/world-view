@@ -1,5 +1,5 @@
 import * as Cesium from 'cesium';
-import { CITY_POIS, findPoiByName, flyToGlobeView, flyToLandmark, flyToPOI, flyToPresetLocation, GLOBE_VIEW, searchAndFlyTo } from '../locations.js';
+import { CITY_POIS, findPoiByName, flyToGlobeView, flyToLandmark, flyToPOI, flyToPresetLocation, GLOBE_VIEW, searchAndFlyTo } from '../camera/locations.js';
 import {
   getContextStore,
   getSelectedEntityContext,
@@ -7,14 +7,14 @@ import {
 } from '../data/contextStore.js';
 import { getNextIssPass } from '../data/satellites.js';
 import { CCTV_FOCUS_RESULT } from '../data/cctv.js';
-import { contextModeWord } from '../contextModePolicy.js';
+import { contextModeWord } from '../policy/contextModePolicy.js';
 import { createAnalystEngine } from '../data/analystEngine.js';
 import { layerFeedState } from '../data/manager.js';
 import militaryAwarenessLayer, {
   collectAircraftProximityWindow,
   contactsWindowFromSnapshot,
 } from '../data/militaryAwareness.js';
-import { initCameraVerbs, moveCamera, flyRoute, interruptCameraMotion, adjustOrbitRange } from '../cameraVerbs.js';
+import { initCameraVerbs, moveCamera, flyRoute, interruptCameraMotion, adjustOrbitRange } from '../camera/cameraVerbs.js';
 import { cachedGroundFloor, warmGroundFloor } from '../data/groundFloor.js';
 import { isPickedWorldPosition } from '../data/scenePick.js';
 import { resolveRegionRingForQuery } from '../annotations/annotationResolver.js';

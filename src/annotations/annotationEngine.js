@@ -1,5 +1,5 @@
 import * as Cesium from 'cesium';
-import { holdContinuousRender, releaseContinuousRender } from '../renderGovernor.js';
+import { holdContinuousRender, releaseContinuousRender } from '../effects/renderGovernor.js';
 import { isRateLimitedOutcome, resolveAnnotationTarget } from './annotationResolver.js';
 
 // Dev convenience: expose the app's Cesium instance for console/preview probing

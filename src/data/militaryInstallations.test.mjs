@@ -21,7 +21,7 @@ import {
   _resetRenderGovernorForTest,
   getRenderGovernorDiagnostics,
   installRenderGovernor,
-} from '../renderGovernor.js';
+} from '../effects/renderGovernor.js';
 import * as Cesium from 'cesium';
 
 test('cheap installation distance prefilter is local and antimeridian-safe', () => {

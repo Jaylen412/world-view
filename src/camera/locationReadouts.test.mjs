@@ -4,7 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ui = fs.readFileSync(path.join(ROOT, 'src', 'ui.js'), 'utf8');
 const director = fs.readFileSync(path.join(ROOT, 'src', 'scenes', 'director.js'), 'utf8');
 
@@ -44,7 +44,7 @@ test('a free-text search records its destination for the LOCATION mini-status', 
 });
 
 test('the mini-status reads its copy from the shared formatter', () => {
-  assert.match(ui, /import \{ locationMiniStatus \} from '\.\/locationStatus\.js';/);
+  assert.match(ui, /import \{ locationMiniStatus \} from '\.\/camera\/locationStatus\.js';/);
   const start = ui.indexOf('  _updateLocationMiniStatus() {');
   assert.ok(start > 0, '_updateLocationMiniStatus is missing');
   const body = ui.slice(start, ui.indexOf('\n  }', start));
@@ -99,7 +99,7 @@ test('a deferred lookup that never flies leaves the readout standing', () => {
   );
 
   // …and the policy only reaches `release` after its authority checks pass.
-  const policy = fs.readFileSync(path.join(ROOT, 'src', 'navigationPolicy.js'), 'utf8');
+  const policy = fs.readFileSync(path.join(ROOT, 'src', 'camera', 'navigationPolicy.js'), 'utf8');
   const fn = policy.slice(policy.indexOf('export function reassertNavigationHandoff'));
   assert.match(fn, /if \(disposed \|\| generation !== currentGeneration\) return false;[\s\S]*?release\?\.\(\);/);
 });

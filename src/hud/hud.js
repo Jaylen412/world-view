@@ -15,10 +15,10 @@
 
 import * as Cesium from 'cesium';
 import { forward as toMGRS } from 'mgrs';
-import { CITY_POIS } from './locations.js';
+import { CITY_POIS } from '../camera/locations.js';
 import { composeLocalityTag } from './hudLocality.js';
-import { ellipsoidalToMslDisplayM, ensureGeoidReady, geoidHeight } from './data/geoid.js';
-import { getBasemapLabelContext } from './voice/gevActions.js';
+import { ellipsoidalToMslDisplayM, ensureGeoidReady, geoidHeight } from '../data/geoid.js';
+import { getBasemapLabelContext } from '../voice/gevActions.js';
 
 /** Color palettes keyed by shader mode; applied as CSS custom properties. */
 const HUD_COLORS = {

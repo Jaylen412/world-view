@@ -182,7 +182,7 @@ test('no storage is touched from a default parameter position', () => {
 
 test('the JS and CSS lists of screen-claiming surfaces stay in step', () => {
   const module = fs.readFileSync(new URL('./firstRunExperience.js', import.meta.url), 'utf8');
-  const css = fs.readFileSync(new URL('../style.css', import.meta.url), 'utf8');
+  const css = fs.readFileSync(new URL('../../style.css', import.meta.url), 'utf8');
 
   assert.deepEqual(
     [...EXCLUSIVE_SURFACE_CLASSES].sort(),
@@ -230,7 +230,7 @@ test('the key handler refuses to act for a card that is not really on screen', (
 
 test('an overlay with NO class to watch still disarms the launcher', () => {
   const module = fs.readFileSync(new URL('./firstRunExperience.js', import.meta.url), 'utf8');
-  const css = fs.readFileSync(new URL('../style.css', import.meta.url), 'utf8');
+  const css = fs.readFileSync(new URL('../../style.css', import.meta.url), 'utf8');
 
   // The repro, pinned as the stacking it actually is: the attribution lightbox
   // is full-screen ABOVE the card and announces itself with nothing. The card
@@ -260,7 +260,7 @@ test('an overlay with NO class to watch still disarms the launcher', () => {
 });
 
 test('one ESC does one thing — the radio disclosure stops the launcher outright', () => {
-  const ui = fs.readFileSync(new URL('./ui.js', import.meta.url), 'utf8');
+  const ui = fs.readFileSync(new URL('../ui.js', import.meta.url), 'utf8');
   const module = fs.readFileSync(new URL('./firstRunExperience.js', import.meta.url), 'utf8');
 
   // stopPropagation() does NOT stop later listeners on the SAME document, so the
@@ -318,7 +318,7 @@ test('a refused write takes the tick back instead of promising "never again"', (
 
 test('a surface class that never clears is an ACCEPTED no-show, not a timer', () => {
   const module = fs.readFileSync(new URL('./firstRunExperience.js', import.meta.url), 'utf8');
-  const state = fs.readFileSync(new URL('../docs/CURRENT-STATE.md', import.meta.url), 'utf8');
+  const state = fs.readFileSync(new URL('../../docs/CURRENT-STATE.md', import.meta.url), 'utf8');
 
   // A "reveal anyway after N seconds" would trade a benign no-show for the card
   // punching through a recording in progress — recordings run long, and none of
@@ -341,7 +341,7 @@ test('a surface class that never clears is an ACCEPTED no-show, not a timer', ()
 
 test('the scroll fade only appears when the list really overflows', () => {
   const module = fs.readFileSync(new URL('./firstRunExperience.js', import.meta.url), 'utf8');
-  const css = fs.readFileSync(new URL('../style.css', import.meta.url), 'utf8');
+  const css = fs.readFileSync(new URL('../../style.css', import.meta.url), 'utf8');
   // A fade on a card where all five tiles fit promises a sixth mission that does
   // not exist, which is worse than no affordance at all.
   assert.match(module, /const overflows = choiceList\.scrollHeight > choiceList\.clientHeight \+ 1;/);
@@ -545,9 +545,9 @@ test('the decision table is written down where the next editor will read it', ()
 // ── Markup, startup ordering, accessibility ─────────────────────────────────
 
 test('markup, startup ordering and accessibility remain pinned', () => {
-  const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-  const main = fs.readFileSync(new URL('./main.js', import.meta.url), 'utf8');
-  const css = fs.readFileSync(new URL('../style.css', import.meta.url), 'utf8');
+  const html = fs.readFileSync(new URL('../../index.html', import.meta.url), 'utf8');
+  const main = fs.readFileSync(new URL('../main.js', import.meta.url), 'utf8');
+  const css = fs.readFileSync(new URL('../../style.css', import.meta.url), 'utf8');
 
   assert.match(html, /id="first-run-launcher" role="dialog"[^>]*aria-labelledby="first-run-title"[^>]*hidden/);
   assert.equal((html.match(/data-first-run-choice=/g) || []).length, 4);
@@ -623,7 +623,7 @@ test('the launcher keeps focus, restores it, and never disables the focused butt
 });
 
 test('the DISPLAY rail starts collapsed on a first run, and a stored choice wins', () => {
-  const ui = fs.readFileSync(new URL('./ui.js', import.meta.url), 'utf8');
+  const ui = fs.readFileSync(new URL('../ui.js', import.meta.url), 'utf8');
   // The rail opened by default to advertise HUD / DETECT / 3D. Those default ON
   // now, so it was opening to offer controls for things already happening —
   // while competing with the mission card for the one first impression there is.
@@ -647,7 +647,7 @@ test('the DISPLAY rail starts collapsed on a first run, and a stored choice wins
 // ── Voice: instruction-only, tool schema byte-unchanged ─────────────────────
 
 test('the voice TOOL SCHEMA is byte-identical to main — the mission mapping is instructions only', () => {
-  const src = fs.readFileSync(new URL('../vite.config.js', import.meta.url), 'utf8');
+  const src = fs.readFileSync(new URL('../../vite.config.js', import.meta.url), 'utf8');
   const start = src.indexOf('const GEV_REALTIME_TOOLS = [');
   assert.ok(start > 0, 'GEV_REALTIME_TOOLS must still be a single literal array');
   const end = src.indexOf('\n];\n', start);
@@ -681,7 +681,7 @@ test('the voice TOOL SCHEMA is byte-identical to main — the mission mapping is
 });
 
 test('every layer a mission drives is already in the shipped set_layer_visibility enum', () => {
-  const src = fs.readFileSync(new URL('../vite.config.js', import.meta.url), 'utf8');
+  const src = fs.readFileSync(new URL('../../vite.config.js', import.meta.url), 'utf8');
   const tool = src.slice(src.indexOf("name: 'set_layer_visibility'"), src.indexOf("name: 'show_data_layers_menu'"));
   const missionLayerIds = Object.values(FIRST_RUN_MISSIONS).flatMap((mission) => mission.layerIds || []);
   assert.ok(missionLayerIds.length > 0);

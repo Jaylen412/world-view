@@ -18,7 +18,7 @@ import {
   installRenderGovernor,
   getRenderGovernorDiagnostics,
   _resetRenderGovernorForTest,
-} from '../renderGovernor.js';
+} from '../effects/renderGovernor.js';
 
 class MockLayerEvent {
   constructor() {

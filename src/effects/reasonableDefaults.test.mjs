@@ -29,18 +29,18 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 
 import { KEYHOLE_OUTER_RADIUS, KEYHOLE_OUTSIDE_OPACITY_DEFAULT, KEYHOLE_LABEL_FEATHER_RATIO } from './celestialRing.js';
-import { AIRCRAFT_BRACKET_FLOOR_ANCHOR } from './data/detectionPolicy.js';
+import { AIRCRAFT_BRACKET_FLOOR_ANCHOR } from '../data/detectionPolicy.js';
 import {
   SCOPE_FEATHER_RATIO_DEFAULT,
   getScopeMaskFeather,
   scopeMaskGeometry,
   setScopeMaskFeather,
 } from './scopeMask.js';
-import { ShareLinkManager } from './sharelink.js';
+import { ShareLinkManager } from '../camera/sharelink.js';
 
-const uiSource = fs.readFileSync(new URL('./ui.js', import.meta.url), 'utf8');
-const indexHtml = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-const shareSource = fs.readFileSync(new URL('./sharelink.js', import.meta.url), 'utf8');
+const uiSource = fs.readFileSync(new URL('../ui.js', import.meta.url), 'utf8');
+const indexHtml = fs.readFileSync(new URL('../../index.html', import.meta.url), 'utf8');
+const shareSource = fs.readFileSync(new URL('../camera/sharelink.js', import.meta.url), 'utf8');
 
 /** Slice ui.js between two literal anchors, so a pin reads one method, not the file. */
 function uiBlock(start, end) {

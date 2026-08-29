@@ -1,5 +1,5 @@
 import * as Cesium from 'cesium';
-import { deriveWeatherEffectProfile, weatherAltitudeFactors } from './weatherEffectsMath.js';
+import { deriveWeatherEffectProfile, weatherAltitudeFactors } from '../effects/weatherEffectsMath.js';
 
 const WEATHER_REFRESH_MS = 5 * 60_000;
 const CLOUD_FRAME_MS = 1000 / 12;

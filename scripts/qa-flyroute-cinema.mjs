@@ -188,7 +188,7 @@ try {
   if (!flight?.ok) throw new Error(`fly_route refused: ${flight?.error}`);
   const coldPath = await page.evaluate(async () => {
     try {
-      const mod = await import('/src/cameraVerbs.js');
+      const mod = await import('/src/camera/cameraVerbs.js');
       return mod.getActiveCameraMotion?.() ?? null;
     } catch { return 'module-unavailable'; }
   });
@@ -448,7 +448,7 @@ try {
     let slotBefore = 'module-unavailable';
     let slotAfter = 'module-unavailable';
     try {
-      const mod = await import('/src/cameraVerbs.js');
+      const mod = await import('/src/camera/cameraVerbs.js');
       read = () => mod.getActiveCameraMotion?.() ?? null;
       slotBefore = read();
     } catch { /* dev-only module read */ }

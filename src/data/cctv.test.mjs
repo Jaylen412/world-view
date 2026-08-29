@@ -65,7 +65,7 @@ import {
   CCTV_ACTIVATION_RESULT,
   CCTV_FOCUS_REQUEST_EVENT,
   activateCctvCameraFromWorldClick,
-} from '../cctvFocusRequest.js';
+} from '../policy/cctvFocusRequest.js';
 
 const UI_SOURCE = fs.readFileSync(
   path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'ui.js'),

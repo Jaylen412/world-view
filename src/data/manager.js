@@ -1,4 +1,4 @@
-import { governorRequestRender } from '../renderGovernor.js';
+import { governorRequestRender } from '../effects/renderGovernor.js';
 import { markDetectionSourcesChanged } from './detection.js';
 function cloneLayerParams(value) {
   if (Array.isArray(value)) return value.map(cloneLayerParams);

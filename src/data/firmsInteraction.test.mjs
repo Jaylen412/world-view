@@ -8,7 +8,7 @@ import * as Cesium from 'cesium';
 import { createFirmsHeatmapLayer, applyFirmsOverlayPolicy, buildCellCard } from './firmsHeatmap.js';
 import { fireDetectionKey } from './firmsLabels.js';
 import { registerPickOwner, unregisterPickOwner } from './pickRegistry.js';
-import { WORLD_FOCUS_REQUEST_EVENT } from '../worldFocus.js';
+import { WORLD_FOCUS_REQUEST_EVENT } from '../camera/worldFocus.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';

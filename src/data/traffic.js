@@ -12,7 +12,7 @@ import {
 } from './trafficPresetStyle.js';
 import { queuePlatoons, locateAlongRoad } from './trafficQueue.js';
 import { registerDynamicCredit, TOMTOM_CREDIT } from './dataCredits.js';
-import { holdContinuousRender, releaseContinuousRender } from '../renderGovernor.js';
+import { holdContinuousRender, releaseContinuousRender } from '../effects/renderGovernor.js';
 
 /**
  * @file Street Traffic — animated dots along OSM road polylines, colored by

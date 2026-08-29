@@ -43,8 +43,8 @@ import {
   forgetSpriteFocus,
   getFocusTarget,
 } from './focusDeemphasis.js';
-import { requestWorldFocus } from '../worldFocus.js';
-import { holdContinuousRender, releaseContinuousRender } from '../renderGovernor.js';
+import { requestWorldFocus } from '../camera/worldFocus.js';
+import { holdContinuousRender, releaseContinuousRender } from '../effects/renderGovernor.js';
 
 const FOCUS_EVIDENCE_DEV = import.meta.env?.DEV === true;
 

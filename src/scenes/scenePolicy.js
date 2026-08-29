@@ -18,7 +18,7 @@
 // registry (director._captureLayerStates), so those shots declare all sixteen
 // keys and still reconcile in full.
 
-import { contextLayerEnableBlockReason } from '../contextModePolicy.js';
+import { contextLayerEnableBlockReason } from '../policy/contextModePolicy.js';
 
 /**
  * Layer params that re-establish a tracked contact — and with it a SECOND

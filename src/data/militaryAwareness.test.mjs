@@ -31,13 +31,13 @@ import {
   _resetRenderGovernorForTest,
   getRenderGovernorDiagnostics,
   installRenderGovernor,
-} from '../renderGovernor.js';
+} from '../effects/renderGovernor.js';
 import {
   AWARENESS_RADIUS_M,
   formatAwarenessLabel,
   getAwarenessNavigationTargets,
 } from './militaryAwarenessEngine.js';
-import { NAVIGATION_AUTHORITY_EVENT } from '../navigationPolicy.js';
+import { NAVIGATION_AUTHORITY_EVENT } from '../camera/navigationPolicy.js';
 
 const militaryAwarenessSource = fs.readFileSync(
   new URL('./militaryAwareness.js', import.meta.url),

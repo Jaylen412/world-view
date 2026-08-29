@@ -30,7 +30,7 @@ import {
   refreshTrackedSubjectContext,
   selectTrackedSubjectContext,
 } from './contextStore.js';
-import { holdContinuousRender, releaseContinuousRender } from '../renderGovernor.js';
+import { holdContinuousRender, releaseContinuousRender } from '../effects/renderGovernor.js';
 import { isExplicitLayerStateOrigin } from './layerState.js';
 
 /**

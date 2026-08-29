@@ -1,11 +1,11 @@
 import * as Cesium from 'cesium';
-import { BLOOM_INTENSITY_DEFAULT, BLOOM_SCALE_VERSION } from './bloom.js';
+import { BLOOM_INTENSITY_DEFAULT, BLOOM_SCALE_VERSION } from '../effects/bloom.js';
 import {
   migrateDetectionState,
   normalizeAllocationStrategy,
-} from './data/detectionPolicy.js';
-import { clampScopeTerminusPct } from './scopeMask.js';
-import { decodeLayerStateParams, encodeLayerStateParams } from './data/layerState.js';
+} from '../data/detectionPolicy.js';
+import { clampScopeTerminusPct } from '../effects/scopeMask.js';
+import { decodeLayerStateParams, encodeLayerStateParams } from '../data/layerState.js';
 
 /**
  * Share Links — URL Hash State Management

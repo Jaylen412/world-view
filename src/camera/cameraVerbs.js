@@ -16,7 +16,7 @@
  */
 
 import * as Cesium from 'cesium';
-import { holdContinuousRender, releaseContinuousRender } from './renderGovernor.js';
+import { holdContinuousRender, releaseContinuousRender } from '../effects/renderGovernor.js';
 
 /** °/s by speed word — orbit; pan uses fractions of view height/s. */
 const ORBIT_DEG_S = { slow: 2, normal: 6, fast: 15 };

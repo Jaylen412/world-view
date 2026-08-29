@@ -21,7 +21,7 @@ import { resolveAnnotationTarget } from './annotationResolver.js';
 import {
   getRenderGovernorDiagnostics,
   _resetRenderGovernorForTest,
-} from '../renderGovernor.js';
+} from '../effects/renderGovernor.js';
 
 // A resolver that replays a scripted sequence of outcomes (undefined = transient,
 // null = definitive miss, object = footprint) and counts its invocations.

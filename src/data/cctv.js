@@ -50,7 +50,7 @@ import { registerSpriteCollection, restoreSpriteOrder } from './spriteOrder.js';
 import {
   CCTV_ACTIVATION_RESULT,
   activateCctvCameraFromWorldClick,
-} from '../cctvFocusRequest.js';
+} from '../policy/cctvFocusRequest.js';
 import { bindTrackingClickGesture, isTrackingClickGesture } from './trackingClickGesture.js';
 import {
   clearOverlaySource,
@@ -58,7 +58,7 @@ import {
   setOverlayEntries,
   setOverlaySourceVisible,
 } from '../overlays/worldOverlay.js';
-import { CITY_POIS } from '../locations.js';
+import { CITY_POIS } from '../camera/locations.js';
 import {
   registerPickOwner,
   resolvePickId,
@@ -98,7 +98,7 @@ import {
   getFocusTarget,
   onFocusTargetAppear,
 } from './focusDeemphasis.js';
-import { holdContinuousRender, releaseContinuousRender } from '../renderGovernor.js';
+import { holdContinuousRender, releaseContinuousRender } from '../effects/renderGovernor.js';
 
 // ---------------------------------------------------------------------------
 // API endpoints

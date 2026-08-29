@@ -15,7 +15,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-const src = readFileSync(fileURLToPath(new URL('./ui.js', import.meta.url)), 'utf8');
+const src = readFileSync(fileURLToPath(new URL('../ui.js', import.meta.url)), 'utf8');
 
 const handlerStart = src.indexOf('_handleContextLayerChange(change) {');
 assert.ok(handlerStart > 0, 'handler found');

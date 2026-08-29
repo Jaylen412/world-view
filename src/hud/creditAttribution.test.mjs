@@ -4,7 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const css = fs.readFileSync(path.join(ROOT, 'style.css'), 'utf8');
 const ui = fs.readFileSync(path.join(ROOT, 'src', 'ui.js'), 'utf8');
 

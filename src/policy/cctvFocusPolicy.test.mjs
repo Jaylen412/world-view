@@ -73,7 +73,7 @@ test('CCTV enable retains a pre-await tracking snapshot when tracking clears dur
   assert.match(diagnostics[0][0], /before setEnabled await/);
   assert.match(diagnostics[1][0], /after setEnabled await/);
 
-  const uiSource = readFileSync(new URL('./ui.js', import.meta.url), 'utf8');
+  const uiSource = readFileSync(new URL('../ui.js', import.meta.url), 'utf8');
   assert.match(uiSource, /await runCctvLayerEnableTransition\(\{/);
 });
 

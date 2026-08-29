@@ -15,7 +15,7 @@ import { DataLayerManager, layerFeedState } from './manager.js';
 import {
   contextSnapshotLayerIds,
   shouldCaptureContextSession,
-} from '../contextModePolicy.js';
+} from '../policy/contextModePolicy.js';
 
 /** Build a mock layer whose init/update resolve on the next microtask, so a
  *  second toggle can land while the first is awaiting. */

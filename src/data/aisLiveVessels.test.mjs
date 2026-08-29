@@ -30,7 +30,7 @@ import {
 } from './aisLiveVessels.js';
 import aisLiveVesselsLayer from './aisLiveVessels.js';
 import { registerEntityContext, selectEntityContext } from './contextStore.js';
-import { WORLD_FOCUS_REQUEST_EVENT } from '../worldFocus.js';
+import { WORLD_FOCUS_REQUEST_EVENT } from '../camera/worldFocus.js';
 import { ensureGeoidReady, geoidHeight } from './geoid.js';
 import { registerPickOwner, unregisterPickOwner } from './pickRegistry.js';
 import { applyVesselOverlayPolicy } from './vesselLabels.js';

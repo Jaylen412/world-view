@@ -17,7 +17,7 @@ import {
   validateLayerStateRegistry,
 } from './layerState.js';
 import radioLayer from './radio.js';
-import { stampInitialShareGesture } from '../navigationPolicy.js';
+import { stampInitialShareGesture } from '../camera/navigationPolicy.js';
 
 function deferred() {
   let resolve;

@@ -20,7 +20,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { registerHooks } from 'node:module';
-import { ensureGeoidReady } from './data/geoid.js';
+import { ensureGeoidReady } from '../data/geoid.js';
 
 const MGRS_STUB_URL = 'gev-test-stub:mgrs';
 registerHooks({
@@ -93,9 +93,9 @@ function installHudEnvironment() {
 
 test('hud.js corrects the camera height to MSL through the geoid module', () => {
   assert.equal(
-    has(/import \{[^}]*\bellipsoidalToMslDisplayM\b[^}]*\} from '\.\/data\/geoid\.js';/s),
+    has(/import \{[^}]*\bellipsoidalToMslDisplayM\b[^}]*\} from '\.\.\/data\/geoid\.js';/s),
     true,
-    'hud.js must take the datum correction from ./data/geoid.js, not re-derive one',
+    'hud.js must take the datum correction from ../data/geoid.js, not re-derive one',
   );
   assert.equal(
     has(/ensureGeoidReady\(\)\s*\n\s*\.then\(/),

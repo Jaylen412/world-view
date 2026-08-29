@@ -18,8 +18,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SOURCE = path.join(ROOT, 'src', 'cameraVerbs.js');
-const TESTS = 'src/routeCinematics.test.mjs';
+const SOURCE = path.join(ROOT, 'src', 'camera', 'cameraVerbs.js');
+const TESTS = 'src/camera/routeCinematics.test.mjs';
 
 /** @type {Array<{defect: string, from: string, to: string}>} */
 const MUTATIONS = [
